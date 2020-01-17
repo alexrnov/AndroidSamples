@@ -21,6 +21,7 @@ public class Student implements Parcelable {
     this.rollno = rollno;
   }
 
+  // This is the method which is used to bind everything together.
   public static final Creator<Student> CREATOR = new Creator<Student>() {
     @Override
     public Student createFromParcel(Parcel in) {
@@ -32,7 +33,7 @@ public class Student implements Parcelable {
       return new Student[size];
     }
   };
-  
+
   //This method doesn’t do much.
   @Override
   public int describeContents() {
