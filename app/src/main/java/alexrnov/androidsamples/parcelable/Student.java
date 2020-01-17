@@ -2,6 +2,9 @@ package alexrnov.androidsamples.parcelable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
+
+import static alexrnov.androidsamples.Initialization.TAG;
 
 public class Student implements Parcelable {
 
@@ -9,7 +12,20 @@ public class Student implements Parcelable {
   private Integer age;
   private Integer rollno;
 
-  protected Student(Parcel in) {
+  public String getName() {
+    return name;
+  }
+
+  public Integer getAge() {
+    return age;
+  }
+
+  public Integer getRollno() {
+    return rollno;
+  }
+
+  private Student(Parcel in) {
+    Log.i(TAG, "private Student(Parcel in)");
     age = in.readInt();
     name = in.readString();
     rollno = in.readInt();

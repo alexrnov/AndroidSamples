@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import alexrnov.androidsamples.Initialization.TAG
-import alexrnov.androidsamples.parcelable.ParcelableActivity
+import alexrnov.androidsamples.parcelable.ParcelableFirstActivity
 import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
@@ -15,9 +15,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    /**
+     * Parcelable is an Android only interface which is used to serialize a class so its properties
+     * can be transferred from one activity to another.
+     */
     fun parcelableButton(view: View) {
-      Log.i(TAG, "click")
-      val intent = Intent(this, ParcelableActivity::class.java)
+      val intent = Intent(this, ParcelableFirstActivity::class.java)
       startActivity(intent)
     }
 }
