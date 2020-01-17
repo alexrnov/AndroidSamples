@@ -25,7 +25,6 @@ public class Student implements Parcelable {
   }
 
   private Student(Parcel in) {
-    Log.i(TAG, "private Student(Parcel in)");
     age = in.readInt();
     name = in.readString();
     rollno = in.readInt();

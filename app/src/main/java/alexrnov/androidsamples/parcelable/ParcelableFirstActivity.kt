@@ -28,7 +28,6 @@ class ParcelableFirstActivity: AppCompatActivity() {
     val age = Integer.parseInt(ageEditText?.text.toString())
     val rollno = Integer.parseInt(rollnoEditText?.text.toString())
     student = Student(nameEditText?.text.toString(), age, rollno)
-
     val intent = Intent(this, ParcelableSecondActivity::class.java)
     intent.putExtra("st", student)
     startActivity(intent)
