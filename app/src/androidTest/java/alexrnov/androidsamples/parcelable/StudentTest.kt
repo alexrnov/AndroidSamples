@@ -13,6 +13,10 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
+/**
+ * Инструментальный тест проверяет, что интерфейс Parcelable правильно
+ * реализован для класса Student
+ */
 @RunWith(AndroidJUnit4::class)
 @SmallTest
 class StudentTest {
