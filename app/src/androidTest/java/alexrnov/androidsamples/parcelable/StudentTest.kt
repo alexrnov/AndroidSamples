@@ -20,17 +20,24 @@ class StudentTest {
 
   @Before
   fun createStudent() {
+    // Set up the Parcelable object to send and receive.
     student = Student("alexr", 4, 5)
   }
 
   @Test
   fun f() {
+    // write the data
     val parcel = Parcel.obtain()
     student.writeToParcel(parcel, student.describeContents())
+
+    // after you're done with writing, you need to reset the parcel for reading.
     parcel.setDataPosition(0)
 
+    // read the data.
     val studentFromParcel = Student.CREATOR.createFromParcel(parcel)
     Log.i(TAG, "name = ${studentFromParcel.name}, age = ${studentFromParcel.age}, rollno = ${studentFromParcel.rollno}")
+
+    // verify that the received data is correct
     assertThat(studentFromParcel.name).isEqualTo("alexr")
     assertThat(studentFromParcel.age).isEqualTo(4)
     assertThat(studentFromParcel.rollno).isEqualTo(5)
