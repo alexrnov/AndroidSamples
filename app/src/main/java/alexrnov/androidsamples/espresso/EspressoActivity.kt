@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import alexrnov.androidsamples.Initialization.TAG
+import android.content.Intent
 import android.widget.EditText
 import android.widget.TextView
 
@@ -20,6 +21,10 @@ class EspressoActivity: AppCompatActivity() {
     textView = findViewById(R.id.espresso_text_view)
   }
 
+  /**
+   * Демонстрация теста espresso для автоматического взаимодействия
+   * с пользовательским интерфейсом
+   */
   fun espressoChangeTextButton(view: View) {
     Log.i(TAG, "espresso")
     val inputText = editText?.text.toString()
@@ -28,5 +33,11 @@ class EspressoActivity: AppCompatActivity() {
       "w" -> "W"
       else -> inputText
     }
+  }
+
+  fun toOtherActivityButton(view: View) {
+    val intent = Intent(this, EspressoActivitySecond::class.java)
+    intent.putExtra("retrieve_text", "retrieve text")
+    startActivity(intent)
   }
 }
