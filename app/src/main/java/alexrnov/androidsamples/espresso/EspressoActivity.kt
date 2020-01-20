@@ -23,6 +23,10 @@ class EspressoActivity: AppCompatActivity() {
   fun espressoChangeTextButton(view: View) {
     Log.i(TAG, "espresso")
     val inputText = editText?.text.toString()
-    textView?.text = inputText
+    textView?.text = when (inputText) {
+      "" -> "empty string"
+      "w" -> "W"
+      else -> inputText
+    }
   }
 }

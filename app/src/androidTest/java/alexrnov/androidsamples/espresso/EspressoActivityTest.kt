@@ -34,6 +34,10 @@ class EspressoActivityTest {
     stringToBetyped = "Espresso"
   }
 
+  /**
+   * Проверить значение текста для text_view после ввода любого текста
+   * в поле edit_text и нажатия кнопки
+   */
   @Test
   fun f() {
     // type text and then press the button
@@ -44,10 +48,24 @@ class EspressoActivityTest {
     // check that the text was changed
     onView(withId(R.id.espresso_text_view)).check(matches(withText(stringToBetyped)))
   }
+
+  /**
+   * Проверить значение текста для text_view после ввода текста "w"
+   * в поле edit_text и нажатия кнопки.
+   */
   @Test
   fun f2() {
     onView(withId(R.id.espresso_edit_text))
-      .perform(pressKey(40), closeSoftKeyboard())
-
+      .perform(typeText("w"), closeSoftKeyboard())
+    onView(withId(R.id.espresso_button)).perform(click())
+    onView(withId(R.id.espresso_text_view)).check(matches(withText("W")))
+    /*
+     * проверить значение текста для text_view после ввода пустого текста
+     * в поле edit_text и нажатия кнопки.
+     */
+    onView(withId(R.id.espresso_edit_text))
+      .perform(clearText()) // отчистить поле ввода
+    onView(withId(R.id.espresso_button)).perform(click())
+    onView(withId(R.id.espresso_text_view)).check(matches(withText("empty string")))
   }
 }
