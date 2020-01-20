@@ -5,22 +5,28 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import alexrnov.androidsamples.Initialization.TAG
+import alexrnov.androidsamples.espresso.EspressoActivity
 import alexrnov.androidsamples.parcelable.ParcelableFirstActivity
 import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+  }
 
-    /**
-     * Parcelable is an Android only interface which is used to serialize a class so its properties
-     * can be transferred from one activity to another.
-     */
-    fun parcelableButton(view: View) {
-      val intent = Intent(this, ParcelableFirstActivity::class.java)
-      startActivity(intent)
-    }
+  /**
+  * Parcelable is an Android only interface which is used to serialize a class so its properties
+  * can be transferred from one activity to another.
+  */
+  fun parcelableButton(view: View) {
+    val intent = Intent(this, ParcelableFirstActivity::class.java)
+    startActivity(intent)
+  }
+
+  fun espessoButton(view: View) {
+    val intent = Intent(this, EspressoActivity::class.java)
+    startActivity(intent)
+  }
 }

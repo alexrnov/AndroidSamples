@@ -20,9 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".parcelable.ParcelableFirstActivity">
-
         </activity>
         <activity android:name=".parcelable.ParcelableSecondActivity">
+        </activity>
+        <activity android:name=".espresso.EspressoActivity">
         </activity>
     </application>
 
