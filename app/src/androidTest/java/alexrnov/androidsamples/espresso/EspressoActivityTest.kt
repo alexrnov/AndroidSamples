@@ -14,6 +14,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * Тесты демонстрируют автоматическое взаимодействие пользователя
+ * с элементами пользовательского интерфейса */
 @RunWith(AndroidJUnit4::class)
 @LargeTest
 class EspressoActivityTest {

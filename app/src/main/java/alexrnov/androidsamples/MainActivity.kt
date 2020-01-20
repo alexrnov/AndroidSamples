@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     startActivity(intent)
   }
 
+  /** Демо использования тестов Espresso */
   fun espessoButton(view: View) {
     val intent = Intent(this, EspressoActivityFirst::class.java)
     startActivity(intent)
