@@ -3,8 +3,7 @@ package alexrnov.androidsamples
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import alexrnov.androidsamples.espresso.Activity2
-import alexrnov.androidsamples.espresso.EspressoActivity
+import alexrnov.androidsamples.espresso.EspressoActivityFirst
 import alexrnov.androidsamples.parcelable.ParcelableFirstActivity
 import android.content.Intent
 
@@ -25,13 +24,7 @@ class MainActivity : AppCompatActivity() {
   }
 
   fun espessoButton(view: View) {
-    val intent = Intent(this, EspressoActivity::class.java)
-    startActivity(intent)
-  }
-
-  fun activity2Button(view: View) {
-    val intent = Intent(this, Activity2::class.java)
-    intent.putExtra("send", "send text")
+    val intent = Intent(this, EspressoActivityFirst::class.java)
     startActivity(intent)
   }
 }

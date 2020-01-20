@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".parcelable.ParcelableSecondActivity">
         </activity>
-        <activity android:name=".espresso.EspressoActivity">
+        <activity android:name=".espresso.EspressoActivityFirst">
         </activity>
         <activity android:name=".espresso.EspressoActivitySecond">
         </activity>

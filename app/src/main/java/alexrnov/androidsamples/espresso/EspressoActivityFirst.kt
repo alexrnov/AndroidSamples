@@ -10,7 +10,7 @@ import android.content.Intent
 import android.widget.EditText
 import android.widget.TextView
 
-class EspressoActivity: AppCompatActivity() {
+class EspressoActivityFirst: AppCompatActivity() {
   private var editText: EditText? = null
   private var textView: TextView? = null
 

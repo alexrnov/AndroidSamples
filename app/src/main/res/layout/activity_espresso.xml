@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".espresso.EspressoActivity">
+    tools:context=".espresso.EspressoActivityFirst">
 
     <EditText
         android:id="@+id/espresso_edit_text"

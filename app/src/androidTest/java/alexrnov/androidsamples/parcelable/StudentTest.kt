@@ -29,7 +29,7 @@ class StudentTest {
   }
 
   @Test
-  fun f() {
+  fun parcelable_test() {
     // write the data
     val parcel = Parcel.obtain()
     student.writeToParcel(parcel, student.describeContents())

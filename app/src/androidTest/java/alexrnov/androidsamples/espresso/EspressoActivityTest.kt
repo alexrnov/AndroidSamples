@@ -9,7 +9,6 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -28,8 +27,8 @@ class EspressoActivityTest {
    * after the test finishes and all methods annotated with @After are run.
    */
   @get:Rule
-  var activityRule: ActivityTestRule<EspressoActivity>
-          = ActivityTestRule(EspressoActivity::class.java)
+  var activityFirstRule: ActivityTestRule<EspressoActivityFirst>
+          = ActivityTestRule(EspressoActivityFirst::class.java)
 
   @Before
   fun initValidString() {
@@ -41,7 +40,7 @@ class EspressoActivityTest {
    * в поле edit_text и нажатия кнопки
    */
   @Test
-  fun f() {
+  fun change_view_first() {
     // type text and then press the button
     onView(withId(R.id.espresso_edit_text)) // onView() - найти представление
       .perform(typeText(stringToBetyped), closeSoftKeyboard()) // perform() - иммитация взаимодействия пользователя с компонентом
@@ -56,7 +55,7 @@ class EspressoActivityTest {
    * в поле edit_text и нажатия кнопки.
    */
   @Test
-  fun f2() {
+  fun change_view_second() {
     onView(withId(R.id.espresso_edit_text))
       .perform(typeText("w"), closeSoftKeyboard())
     onView(withId(R.id.espresso_button)).perform(click())
