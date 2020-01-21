@@ -37,11 +37,11 @@ android {
 
     flavorDimensions "default"
 
-
     /*
     Make a separate flavors for the tests. This is necessary to use the automator
     library with sdk api 18 (android 4.3). To start the flavors with uitests, you need
     go to Menu -> Build -> Select Build Variant -> Active Build Variant = uiTestDebug
+    solution kevinpelgrims https://overcoder.net/q/1000830/
      */
     productFlavors {
         production {
