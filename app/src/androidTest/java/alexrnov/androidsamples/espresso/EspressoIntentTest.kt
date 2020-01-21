@@ -9,6 +9,7 @@ import androidx.test.espresso.intent.matcher.IntentMatchers.*
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.filters.SdkSuppress
 import org.hamcrest.CoreMatchers.allOf
 import org.junit.Rule
 import org.junit.Test
@@ -22,7 +23,6 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 class EspressoIntentTest {
-
   /*
    * The IntentsTestRule class initializes Espresso Intents before each test,
    * terminates the host activity, and releases Espresso Intents after each test.

@@ -27,8 +27,6 @@
         </activity>
         <activity android:name=".espresso.EspressoActivitySecond">
         </activity>
-        <activity android:name=".espresso.Activity2">
-        </activity>
     </application>
 
 </manifest>
