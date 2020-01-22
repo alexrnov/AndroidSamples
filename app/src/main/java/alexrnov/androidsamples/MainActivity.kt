@@ -6,7 +6,8 @@ import android.view.View
 import alexrnov.androidsamples.espresso.EspressoActivityFirst
 import alexrnov.androidsamples.parcelable.ParcelableFirstActivity
 import android.content.Intent
-
+import android.util.Log
+import alexrnov.androidsamples.Initialization.TAG
 class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
   /** Демо использования тестов Espresso */
   fun espessoButton(view: View) {
     val intent = Intent(this, EspressoActivityFirst::class.java)
+    //startActivityForResult(Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+    Log.i(TAG, "ACTION_SETTINGS = " + android.provider.Settings.ACTION_SETTINGS)
     startActivity(intent)
   }
 }
