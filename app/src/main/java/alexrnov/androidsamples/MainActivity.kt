@@ -8,6 +8,8 @@ import alexrnov.androidsamples.parcelable.ParcelableFirstActivity
 import android.content.Intent
 import android.util.Log
 import alexrnov.androidsamples.Initialization.TAG
+import alexrnov.androidsamples.services.ServicesActivity
+
 class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +30,11 @@ class MainActivity : AppCompatActivity() {
   fun espessoButton(view: View) {
     val intent = Intent(this, EspressoActivityFirst::class.java)
     //startActivityForResult(Intent(android.provider.Settings.ACTION_SETTINGS), 0);
-    Log.i(TAG, "ACTION_SETTINGS = " + android.provider.Settings.ACTION_SETTINGS)
+    startActivity(intent)
+  }
+
+  fun servicesButton(view: View) {
+    val intent = Intent(this, ServicesActivity::class.java)
     startActivity(intent)
   }
 }

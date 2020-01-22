@@ -27,6 +27,10 @@
         </activity>
         <activity android:name=".espresso.EspressoActivitySecond">
         </activity>
+        <activity android:name=".services.ServicesActivity">
+        </activity>
+
+        <service android:name=".services.Service1" />
     </application>
 
 </manifest>
