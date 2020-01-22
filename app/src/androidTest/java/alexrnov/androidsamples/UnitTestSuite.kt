@@ -1,6 +1,7 @@
 package alexrnov.androidsamples
 
 import alexrnov.androidsamples.parcelable.StudentTest
+import alexrnov.androidsamples.services.ServiceTest
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 
@@ -10,5 +11,5 @@ import org.junit.runners.Suite
  */
 @RunWith(Suite::class)
 // перечисляются классы, которые нужно выполнить вместе
-@Suite.SuiteClasses(StudentTest::class, ExampleInstrumentedTest::class)
+@Suite.SuiteClasses(StudentTest::class, ServiceTest::class)
 class UnitTestSuite

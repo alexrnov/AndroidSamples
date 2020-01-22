@@ -30,7 +30,7 @@ class AutomatorTest {
   }
 
   @Test
-  fun f() {
+  fun launchApplication() {
     // Start from the home screen
     device.pressHome()
 

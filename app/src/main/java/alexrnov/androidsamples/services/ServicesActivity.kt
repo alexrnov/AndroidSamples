@@ -27,8 +27,8 @@ class ServicesActivity: AppCompatActivity() {
     super.onStart()
     // связать со службой Service2
     val intent = Intent(this, Service2::class.java)
-    //BIND_AUTO_CREATE - параметр привязки: создать службу
-    // если она еще не выполняется
+    intent.putExtra("message", "message text to service2")
+    //BIND_AUTO_CREATE - параметр привязки: создать службу если она еще не выполняется
     bindService(intent, mConnection, Context.BIND_AUTO_CREATE)
   }
 
@@ -41,25 +41,21 @@ class ServicesActivity: AppCompatActivity() {
   }
 
   fun service1Button(view: View) {
-    Log.i(TAG, "service1Button")
     val intent = Intent(this, Service1::class.java)
-    intent.putExtra("message", "text message")
+    intent.putExtra("message", "message text to service1")
     startService(intent)
   }
 
   // вызвать связанную службу, служба возвращает клиенту случайное число
   fun service2Button(view: View) {
-    Log.i(TAG, "service2Button")
     if (mBound) {
-      Log.i(TAG, "mBound = true")
       //вызывается public-метод связанной службы. Однако если c этим вызовом
       //было что-то, что могло привести к зависанию(длительной работы метода),
       //тогда этот запрос должен происходить в отдельном потоке, чтобы избежать
       //снижения производительности активити-класса
       val i = service2?.randomNumber
-      Toast.makeText(this, "number = $i", Toast.LENGTH_SHORT).show()
-    } else {
-      Log.i(TAG, "mBound = false")
+      val s = service2?.message
+      Toast.makeText(this, "number = $i, s = $s", Toast.LENGTH_SHORT).show()
     }
   }
 
