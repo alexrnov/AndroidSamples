@@ -2,8 +2,11 @@ package alexrnov.androidsamples.espresso
 
 import alexrnov.androidsamples.MainActivity
 import alexrnov.androidsamples.R
+import android.app.Activity
+import android.app.Instrumentation
 import android.content.Context
 import android.content.Intent
+import android.provider.ContactsContract
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
@@ -22,6 +25,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.uiautomator.*
 import com.google.common.truth.Truth
 
 /**
@@ -61,5 +66,37 @@ class EspressoIntentTest {
     // так как был выполнен переход к другому действию
     onView(withId(R.id.espresso_button_start_activity)).check(doesNotExist())
 
+  }
+
+  /** проверяет возвращенный номер из списка контактов */
+  @Test
+  fun activityResult_DisplaysContactPhoneNumber() {
+    onView(withId(R.id.get_phone_number)).perform(click())
+
+    val device:UiDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
+
+    // прокрутить список пока не будет найден контакт "Бабушка"
+    val settingsItem = UiScrollable(UiSelector().className("android.widget.ListView"))
+    val babuchka: UiObject = settingsItem.getChildByText(
+      UiSelector().className("android.widget.LinearLayout"), "Бабушка")
+    babuchka.click()
+
+    device.wait(Until.hasObject(By.pkg("alexrnov.androidsamples").depth(0)), 20000L)
+    onView(withId(R.id.espresso_text_view3)).check(matches(withText("8 914 295-98-01")))
+  }
+
+  @Test
+  fun activityResult_DisplaysContactPhoneNumber2() {
+    val resultData = Intent()
+    val phoneNumber = "123-345-6789"
+    resultData.putExtra("phone", phoneNumber)
+    val result = Instrumentation.ActivityResult(Activity.RESULT_OK, resultData)
+    //intending(toPackage("com.android.contacts")).respondWith(result)
+
+    intending(toPackage(Intent.ACTION_PICK)).respondWith(result)
+
+    onView(withId(R.id.get_phone_number)).perform(click())
+
+    onView(withId(R.id.espresso_text_view3)).check(matches(withText(phoneNumber)))
   }
 }

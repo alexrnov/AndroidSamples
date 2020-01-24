@@ -56,12 +56,9 @@ class EspressoActivityFirst: AppCompatActivity() {
 
   /** выбрать контакт из списка контактов */
   fun getPhoneNumberButton(view: View) {
-    println("getPhoneNumber()")
     val intent = Intent(Intent.ACTION_PICK,
       ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
     startActivityForResult(intent, 1)
-    //val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
-    //startActivityForResult(intent, PICK_CONTACT)
   }
 
   public override fun onActivityResult(reqCode: Int, resultCode: Int, data: Intent?) {
@@ -87,14 +84,9 @@ class EspressoActivityFirst: AppCompatActivity() {
         val name = cursor.getString(nameColumnIndex)
         println("name = $name")
         cursor.close()
+
+        textView3?.text = number
       }
     }
-    /*
-    val c = managedQuery(contactData, null, null, null, null)
-    if (c.moveToFirst()) {
-      val name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
-      println("name = $name")
-    }
-    */
   }
 }
