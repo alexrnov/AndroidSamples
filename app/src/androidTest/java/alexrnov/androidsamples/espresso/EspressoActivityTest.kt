@@ -4,11 +4,12 @@ import alexrnov.androidsamples.R
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
+import org.hamcrest.CoreMatchers.allOf
+import org.hamcrest.CoreMatchers.not
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -44,6 +45,12 @@ class EspressoActivityTest {
    */
   @Test
   fun change_view_first() {
+    // проверить, что кнопка отображается
+    // allOf() - позволяет указать комбинацию свойств, по которым производится поиск,
+    // в данном случае id и описатель контента, поскольку
+    // одного идентификатора в некоторых случаях бывает недостаточно: например когда
+    // id являются не уникальными
+    onView(allOf(withId(R.id.espresso_button), withContentDescription("button for click"))).check(matches(isDisplayed()))
     // type text and then press the button
     onView(withId(R.id.espresso_edit_text)) // onView() - найти представление
       .perform(typeText(stringToBetyped), closeSoftKeyboard()) // perform() - иммитация взаимодействия пользователя с компонентом
@@ -71,5 +78,12 @@ class EspressoActivityTest {
       .perform(clearText()) // отчистить поле ввода
     onView(withId(R.id.espresso_button)).perform(click())
     onView(withId(R.id.espresso_text_view)).check(matches(withText("empty string")))
+  }
+
+  @Test
+  fun testHideButton() {
+    onView(withId(R.id.espresso_button_hidden)).perform(click())
+    // проверить, что текст перестал отображаться после нажатия кнопки
+    onView(withId(R.id.espresso_text_view2)).check(matches(not(isDisplayed())))
   }
 }

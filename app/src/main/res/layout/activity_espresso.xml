@@ -35,6 +35,7 @@
         android:id="@+id/espresso_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="button for click"
         android:onClick="espressoChangeTextButton"
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/espresso_text_view"
@@ -52,5 +53,47 @@
         android:text="to other activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/espresso_text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/espresso_button_hidden"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/espresso_button_hidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:onClick="hideTextButton"
+        android:text="Скрыть текст"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/get_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="getPhoneNumberButton"
+        android:text="get Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/espresso_text_view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="44dp"
+        android:text="phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_phone_number" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
