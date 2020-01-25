@@ -27,6 +27,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
+import androidx.test.filters.LargeTest
+import androidx.test.filters.RequiresDevice
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.*
 import com.google.common.truth.Truth
@@ -71,6 +73,11 @@ class EspressoIntentTest {
 
   }
 
+  // (другие варианты @SmallTest, @MediumTest). Указать, сколько времени потребуется
+  // для выполнения теста, и, следовательно, как часто вы можете его запустить.
+  @LargeTest
+  // указывает, что тест должен выполняться только на физических устройствах, а не на эмуляторах.
+  @RequiresDevice
   /** проверяет возвращенный номер из списка контактов */
   @Test
   fun activityResult_DisplaysContactPhoneNumber() {
