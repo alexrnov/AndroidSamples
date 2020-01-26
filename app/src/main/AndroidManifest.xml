@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".services.ServicesActivity">
         </activity>
+        <activity android:name=".material.MaterialActivity">
+        </activity>
 
         <service android:name=".services.Service1" />
         <service android:name=".services.Service2" />

@@ -8,6 +8,7 @@ import alexrnov.androidsamples.parcelable.ParcelableFirstActivity
 import android.content.Intent
 import android.util.Log
 import alexrnov.androidsamples.Initialization.TAG
+import alexrnov.androidsamples.material.MaterialActivity
 import alexrnov.androidsamples.services.ServicesActivity
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
   fun servicesButton(view: View) {
     val intent = Intent(this, ServicesActivity::class.java)
+    startActivity(intent)
+  }
+
+  fun materialDesignButton(view: View) {
+    val intent = Intent(this, MaterialActivity::class.java)
     startActivity(intent)
   }
 }
