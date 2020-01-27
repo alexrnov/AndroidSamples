@@ -16,4 +16,8 @@ class MaterialActivity: AppCompatActivity() {
   fun button1(view: View) {
     Log.i(TAG, "button1 click")
   }
+
+  fun button2(view: View) {
+    Log.i(TAG, "button2 click")
+  }
 }

@@ -18,4 +18,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/disabled_material_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="72dp"
+        android:enabled="false"
+        android:text="disable button2"
+        android:textAppearance="@style/TextStyle"
+        android:onClick="button2"
+        app:layout_constraintStart_toEndOf="@+id/material_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
