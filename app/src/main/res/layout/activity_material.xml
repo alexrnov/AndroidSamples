@@ -10,11 +10,11 @@
         android:id="@+id/material_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="72dp"
+        android:onClick="button1"
         android:text="button1"
         android:textAppearance="@style/TextStyle"
-        android:onClick="button1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,13 +22,179 @@
         android:id="@+id/disabled_material_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="72dp"
         android:enabled="false"
+        android:onClick="button2"
         android:text="disable button2"
         android:textAppearance="@style/TextStyle"
-        android:onClick="button2"
         app:layout_constraintStart_toEndOf="@+id/material_button"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--
+    Elevated MaterialButtons have a shadow which extends outside the bounds of the button.
+    For this reason, the wrapping parent element should set android:clipToPadding="false"
+    in cases where the button shadow could be clipped by the parent bounds.
+    -->
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:clipToPadding="false"
+        android:columnCount="2"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/disabled_material_button"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/material_shadow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="72dp"
+            android:elevation="15dp"
+            android:onClick="button2"
+            android:text="shadow"
+            android:textAppearance="@style/TextStyle" />
+    </GridLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_unelevated_button"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="style"
+        android:textAppearance="@style/TextStyle"
+        android:onClick="button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grid" />
+
+    <!-- Filled, elevated button (default) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_button_default"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:text="default"
+        android:onClick="button2"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_unelevated_button" />
+
+    <!-- Filled, unelevated button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_unelevated_button2"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:onClick="button2"
+        android:text="unelevated_button"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_button_default" />
+
+    <!-- Outlined button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/outlined_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:onClick="button2"
+        android:text="outlined"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_unelevated_button2" />
+
+    <!-- Text button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_text_button"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:onClick="button2"
+        android:text="text button"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlined_button" />
+
+
+    <!-- Icon button -->
+    <!-- app:iconTint="@null" allow show image -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_icon_button"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="button2"
+        android:text="icon button"
+        android:textAppearance="@style/TextStyle"
+        android:textColor="#4e7a5f"
+        app:icon="@drawable/draw"
+        app:iconGravity="textStart"
+        app:iconTint="@null"
+        app:backgroundTintMode="src_over"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
+        app:cornerRadius="20dp"
+        app:iconPadding="58dp"
+        app:backgroundTint="#98a5ad"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_icon_button2"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="button2"
+        android:text="text icon button"
+        android:textAppearance="@style/TextStyle"
+        app:icon="@drawable/ic_launcher"
+        app:iconTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_icon_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/material_button_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="18dp"
+        android:text="setting style"
+        android:textAppearance="@style/TextStyle2"
+        android:theme="@style/AppTheme.Button"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_icon_button2" />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="68dp"
+        android:text="Button"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_button_5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
