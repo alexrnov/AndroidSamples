@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".material.MaterialActivity2">
+
+    <!-- Filled, elevated button (default) -->
+
+    <!-- Filled, unelevated button -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/m2_b1"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="default"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintBottom_toTopOf="@+id/m2_b2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/m2_b2"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unelevated_button"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintBottom_toTopOf="@+id/m2_b3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2_b1" />
+
+    <!-- Outlined button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/m2_b3"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="outlined"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintBottom_toTopOf="@+id/m2_b4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2_b2" />
+
+    <!-- Text button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/m2_b4"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text button (change app theme)"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintBottom_toTopOf="@+id/m2_b5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2_b3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/m2_b5"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text icon button (change app theme)"
+        android:textAppearance="@style/TextStyle"
+        app:icon="@drawable/ic_launcher"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/m2_b6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2_b4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/m2_b6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="18dp"
+        android:text="setting style"
+        android:textAppearance="@style/TextStyle2"
+        android:theme="@style/AppTheme.Button"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2_b5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorAccent">@color/colorAccent2</item>
+    </style>
+
     <style name="StyleButton" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorAccent">@color/design_default_color_primary_dark</item>
     </style>
@@ -27,5 +33,6 @@
         <item name="colorAccent">@color/blueColor</item>
         <item name="android:textColor">@color/orangeColor</item>
     </style>
+
 
 </resources>

@@ -9,6 +9,7 @@ import android.content.Intent
 import android.util.Log
 import alexrnov.androidsamples.Initialization.TAG
 import alexrnov.androidsamples.material.MaterialActivity
+import alexrnov.androidsamples.material.MaterialActivity2
 import alexrnov.androidsamples.services.ServicesActivity
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
   fun materialDesignButton(view: View) {
     val intent = Intent(this, MaterialActivity::class.java)
+    startActivity(intent)
+  }
+
+  fun materialDesignButton2(view: View) {
+    val intent = Intent(this, MaterialActivity2::class.java)
     startActivity(intent)
   }
 }
