@@ -11,9 +11,8 @@ import android.content.SharedPreferences
 import android.widget.Button
 
 /**
- * Демо кнопок material design
  * Для кнопок material design следует переопределять метод onClick программно,
- * поскольку метод onClick определенный в лэйауте может не работать.
+ * поскольку метод onClick, определенный в лэйауте, может не работать.
  */
 class MaterialActivity2: AppCompatActivity() {
 
