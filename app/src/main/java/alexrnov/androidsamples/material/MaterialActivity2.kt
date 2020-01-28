@@ -63,8 +63,6 @@ class MaterialActivity2: AppCompatActivity() {
       }
       val intent = Intent(this, MaterialActivity2::class.java)
       startActivity(intent)
-      //val theme = super.getTheme()
-      //theme.applyStyle(R.style.AppTheme2, true)
     }
     b6?.setOnClickListener { Log.i(TAG, "button click b6") }
   }
