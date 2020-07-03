@@ -22,7 +22,7 @@ import org.junit.runner.RunWith
 @LargeTest
 class EspressoActivityTest {
 
-  private lateinit  var stringToBetyped: String
+  private lateinit var stringToBetyped: String
 
   /**
    * By using ActivityTestRule, the testing framework launches the activity under
